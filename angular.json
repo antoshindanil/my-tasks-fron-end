@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "my-tasks"
+  "defaultProject": "my-tasks",
+  "cli": {
+    "analytics": false
+  }
 }
