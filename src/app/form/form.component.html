@@ -1,0 +1,45 @@
+<div [ngClass]="status ? 'form' : 'form--hide'">
+  <mat-card class="form-card">
+    <div class="form-card__header">
+      <span>Новая задача</span>
+    </div>
+    <mat-divider></mat-divider>
+    <form [formGroup]="createTodoForm" (submit)="onSubmit()">
+
+      <div class="form-card__group" formGroupName="todo">
+        <mat-form-field appearance="fill">
+          <mat-label>Текст задачи</mat-label>
+          <input matInput formControlName="text"/>
+        </mat-form-field>
+      </div>
+
+      <div formGroupName="project" class="form-card__group">
+        <mat-form-field appearance="fill">
+          <mat-label>Выберете проект</mat-label>
+          <mat-select formControlName="id">
+
+            <mat-option value="{{project.id}}" *ngFor="let project of projectList;">{{
+              project.title
+              }}</mat-option>
+
+            <mat-option value="new">
+              Создать новый проект
+            </mat-option>
+
+          </mat-select>
+        </mat-form-field>
+        <div [class.invisible]="formProjectTitleStatus">
+          <mat-form-field appearance="fill">
+            <mat-label>Имя проекта</mat-label>
+            <input matInput formControlName="title"/>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-card__buttons">
+        <button (click)="onStatusChange(); $event.preventDefault();" mat-button>Отмена</button>
+        <button color="primary" mat-raised-button type="submit">ОК</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
