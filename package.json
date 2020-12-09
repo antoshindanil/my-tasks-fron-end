@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 9000",
     "start:prod": "node server.js",
     "build": "ng build",
     "test": "ng test",
@@ -13,14 +13,18 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.3",
+    "@angular/cdk": "~11.0.0-sha-5800ab99b",
     "@angular/common": "~11.0.3",
     "@angular/compiler": "~11.0.3",
     "@angular/core": "~11.0.3",
     "@angular/forms": "~11.0.3",
+    "@angular/material": "~11.0.0-sha-5800ab99b",
     "@angular/platform-browser": "~11.0.3",
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
+    "class-transformer": "^0.3.1",
     "express": "^4.17.1",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
